@@ -1,6 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 
+let API_KEY = "";
+
+async function getMoviesByName(name) {
+  const url = `https://www.omdbapi.com/?apikey=${API_KEY}&t=${name}`;
+  const response = await
+};
+
 function App() {
   return (
     <div className="App">
