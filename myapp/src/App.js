@@ -1,12 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 
-let API_KEY = "";
 
-async function getMoviesByName(name) {
-  const url = `https://www.omdbapi.com/?apikey=${API_KEY}&t=${name}`;
-  const response = await
+
+let API_KEY = "62c9fe58";
+
+async function getMoviesByName(id) {
+  const url = `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`;
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
 };
+
+// ID: tt0848228
+getMoviesByName("tt0848228");
+
+
+
 
 function App() {
   return (
