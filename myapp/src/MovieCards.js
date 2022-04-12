@@ -11,9 +11,9 @@ export default function MovieCards(props) {
                 <div class="GrayBg">{props.runtime}</div>
                 <div class="GrayBg">{props.genre}</div>
             </div>
-            <div>Plot: {props.plot}</div>
-            <div>Actors: {props.actors}</div>
-            <div>Imdb Rating: {props.rating}</div>
+            <div><b>Plot: </b>{props.plot}</div>
+            <div><b>Actors: </b>{props.actors}</div>
+            <div><b>Imdb Rating: </b>{props.rating}</div>
         </div>
     </div>
     );
