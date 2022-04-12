@@ -54,6 +54,10 @@ function App() {
       title={movieData.Title}
       rated={movieData.Rated}
       runtime={movieData.Runtime}
+      genre={movieData.Genre}
+      plot={movieData.Plot}
+      actors={movieData.Actors}
+      rating={movieData.imdbRating}
     />
   )
 }
