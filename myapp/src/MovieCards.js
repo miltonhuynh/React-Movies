@@ -6,14 +6,14 @@ export default function MovieCards(props) {
         </div>
         <div id="MovieInfo">
             <div id="MovieTitle">{props.title}</div>
+            <div id="imdb">{props.rating}</div>
             <div id="Buttons">
                 <div class="GrayBg">{props.rated}</div>
                 <div class="GrayBg">{props.runtime}</div>
                 <div class="GrayBg">{props.genre}</div>
             </div>
-            <div><b>Plot: </b>{props.plot}</div>
-            <div><b>Actors: </b>{props.actors}</div>
-            <div><b>Imdb Rating: </b>{props.rating}</div>
+            <div><b>Plot</b><br/>{props.plot}</div>
+            <div><b>Actors: </b><br/>{props.actors}</div>
         </div>
     </div>
     );
