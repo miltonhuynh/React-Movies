@@ -8,16 +8,17 @@ import GetMovieData from './GetMovieData.js';
 function App() {
   return (
     <>
-      <GetMovieData/>
+      <GetMovieData />
       <MovieCards 
-        posterUrl={GetMovieData.movieData.Poster}
-        title={GetMovieData.movieData.Title}
-        rated={GetMovieData.movieData.Rated}
-        runtime={GetMovieData.movieData.Runtime}
-        genre={GetMovieData.movieData.Genre}
-        plot={GetMovieData.movieData.Plot}
-        actors={GetMovieData.movieData.Actors}
-        rating={GetMovieData.movieData.imdbRating}
+        posterUrl={movieData.Poster}
+        /*
+        title={movieData.Title}
+        rated={movieData.Rated}
+        runtime={movieData.Runtime}
+        genre={movieData.Genre}
+        plot={movieData.Plot}
+        actors={movieData.Actors}
+        rating={movieData.imdbRating}*/
       />
     </>
   )
