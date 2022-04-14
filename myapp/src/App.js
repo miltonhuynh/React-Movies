@@ -47,6 +47,11 @@ const movieData = {
 };
 
 
+const [searchTerm, setsearchterm] = useState("batman");
+const [isLoading, setisLoading] = useState(false);
+const [movies, setmovies] = useState([]);
+const [error, seterror] = useState(null);
+
 function App() {
   return (
     <MovieCards 
