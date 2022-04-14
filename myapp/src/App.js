@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import MovieCards from './MovieCards';
+import MovieCards from './components/MovieCards.js';
+import {useState} from 'react';
 
 
 const movieData = {
@@ -47,10 +48,10 @@ const movieData = {
 };
 
 
-const [searchTerm, setsearchterm] = useState("batman");
-const [isLoading, setisLoading] = useState(false);
-const [movies, setmovies] = useState([]);
-const [error, seterror] = useState(null);
+//const [searchTerm, setsearchterm] = useState("batman");
+//const [isLoading, setisLoading] = useState(false);
+//const [movies, setmovies] = useState([]);
+//const [error, seterror] = useState(null);
 
 function App() {
   return (
