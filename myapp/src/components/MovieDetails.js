@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function MovieCards(props) {
+export default function MovieDetails(props) {
     return (
     <div id="container">
         <div className="image">

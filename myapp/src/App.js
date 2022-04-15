@@ -2,8 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
-import MovieCards from './MovieCards.js';
+import MovieDetails from './components/MovieDetails.js';
 
+/*
 const movieData = {
   Title: "The Avengers",
   Year: "2012",
@@ -46,11 +47,22 @@ const movieData = {
   Website: "N/A",
   Response: "True"
 };
+*/
+
 
 function App() {
+
+  async function GetApiData() {
+    const response = await fetch('https://www.omdbapi.com/?apikey=62c9fe58&t=Avengers');
+    const movieData = await response.json();
+  }
+
+  
   return (
     <>
-      <MovieCards 
+    
+      <MovieDetails 
+      /*
         posterUrl={movieData.Poster}
         title={movieData.Title}
         rated={movieData.Rated}
@@ -59,6 +71,7 @@ function App() {
         plot={movieData.Plot}
         actors={movieData.Actors}
         rating={movieData.imdbRating}
+        */
       />
     </>
   )
