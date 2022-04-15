@@ -55,8 +55,10 @@ function App() {
   async function GetApiData() {
     const response = await fetch('https://www.omdbapi.com/?apikey=62c9fe58&t=Avengers');
     const movieData = await response.json();
+    console.log(movieData);
   }
 
+  console.log(GetApiData());
   
   return (
     <>
