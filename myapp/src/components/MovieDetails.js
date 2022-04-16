@@ -3,7 +3,7 @@ import React from 'react'
 export default function MovieDetails(props) {
     return (
     <div id="container">
-        <div className="image">
+        <div id="DetailsImage">
             <img src={props.posterUrl}></img>
         </div>
         <div id="MovieInfo">

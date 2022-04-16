@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {useState, useEffect} from 'react';
 import MovieDetails from './components/MovieDetails.js';
+import MovieCard from './components/MovieCard';
 
 function App() {
 
@@ -14,16 +15,15 @@ function App() {
 
     useEffect(() => {
         setisLoading(true);
-        const url = "https://www.omdbapi.com/?apikey=62c9fe58&t=Avengers";
 
         const fetchData = async () => {
             try {
-                const response = await fetch(url);
+                const response = await fetch('https://www.omdbapi.com/?apikey=62c9fe58&t=Avengers');
                 const data = await response.json();
                 // Simulate 1s loading time
                 setTimeout(function() {
                     setmovieData(data);
-                }, 1000);
+                }, 500);
                 setisLoading(false);
                 seterror(null);
             } catch (error) {
@@ -36,18 +36,23 @@ function App() {
     }, []);
 
     return (
-        <>
+        <div>
             <MovieDetails 
-            posterUrl={movieData.Poster}
-            title={movieData.Title}
-            rated={movieData.Rated}
-            runtime={movieData.Runtime}
-            genre={movieData.Genre}
-            plot={movieData.Plot}
-            actors={movieData.Actors}
-            rating={movieData.imdbRating}
+                posterUrl={movieData.Poster}
+                title={movieData.Title}
+                rated={movieData.Rated}
+                runtime={movieData.Runtime}
+                genre={movieData.Genre}
+                plot={movieData.Plot}
+                actors={movieData.Actors}
+                rating={movieData.imdbRating}
             />
-        </>
+            <MovieCard
+                posterUrl={movieData.Poster}
+                title={movieData.Title}
+                type={movieData.Type}
+            />
+        </div>
     );
 }
 
