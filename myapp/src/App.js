@@ -34,6 +34,10 @@ function App() {
         fetchData();
     }, []);
 
+    const change = () => {
+        document.body.style.backgroundColor = "lightblue"
+    }
+
     if(isLoading == true) {
         return (
             <div id="Loading">Loading</div>
@@ -44,6 +48,7 @@ function App() {
         } else {
             return (
                 <div>
+                    <button onClick={change}></button>
                     <div id="Success">Fetch successful!</div>
                     <MovieDetails 
                         posterUrl={movieData.Poster}
