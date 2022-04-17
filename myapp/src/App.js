@@ -20,10 +20,7 @@ function App() {
             try {
                 const response = await fetch('https://www.omdbapi.com/?apikey=62c9fe58&t=Avengers');
                 const data = await response.json();
-                // Simulate 1s loading time
-                setTimeout(function() {
-                    setmovieData(data);
-                }, 500);
+                setmovieData(data);
                 setisLoading(false);
                 seterror(null);
             } catch (error) {
@@ -35,25 +32,36 @@ function App() {
         fetchData();
     }, []);
 
-    return (
-        <div>
-            <MovieDetails 
-                posterUrl={movieData.Poster}
-                title={movieData.Title}
-                rated={movieData.Rated}
-                runtime={movieData.Runtime}
-                genre={movieData.Genre}
-                plot={movieData.Plot}
-                actors={movieData.Actors}
-                rating={movieData.imdbRating}
-            />
-            <MovieCard
-                posterUrl={movieData.Poster}
-                title={movieData.Title}
-                type={movieData.Type}
-            />
-        </div>
-    );
+    if(isLoading == true) {
+        return (
+            <div>Loading</div>
+        )
+    } else {
+        if(error != null) {
+            <div>{error}</div>
+        } else {
+            return (
+                <div>
+                    <div id="Success">Fetch successful!</div>
+                    <MovieDetails 
+                        posterUrl={movieData.Poster}
+                        title={movieData.Title}
+                        rated={movieData.Rated}
+                        runtime={movieData.Runtime}
+                        genre={movieData.Genre}
+                        plot={movieData.Plot}
+                        actors={movieData.Actors}
+                        rating={movieData.imdbRating}
+                    />
+                    <MovieCard
+                        posterUrl={movieData.Poster}
+                        title={movieData.Title}
+                        type={movieData.Type}
+                    />
+                </div>
+            )
+        }
+    }
 }
 
 export default App;
