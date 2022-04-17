@@ -4,6 +4,7 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import MovieDetails from './components/MovieDetails.js';
 import MovieCard from './components/MovieCard';
+import MovieList from './components/MovieList';
 
 function App() {
 
@@ -57,6 +58,9 @@ function App() {
                         posterUrl={movieData.Poster}
                         title={movieData.Title}
                         type={movieData.Type}
+                    />
+                    <MovieList
+                        list={[movieData,movieData,movieData,movieData]}
                     />
                 </div>
             )
