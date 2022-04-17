@@ -70,6 +70,12 @@
   color: green;
 }
 
+#Loading {
+  font-size: 2rem;
+  color: orange;
+}
+
 #MovieList {
   display: flex;
 }
+

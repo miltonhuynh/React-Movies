@@ -8,7 +8,7 @@ export default function MovieDetails(props) {
             </div>
             <div id="MovieInfo">
                 <div id="MovieTitle">{props.title}</div>
-                <div id="imdb">{props.rating}</div>
+                <div id="imdb">IMDb score: {props.rating}</div>
                 <div id="Buttons">
                     <div className="GrayBg">{props.rated}</div>
                     <div className="GrayBg">{props.runtime}</div>

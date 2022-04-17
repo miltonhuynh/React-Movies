@@ -3,7 +3,7 @@ import MovieCard from './MovieCard';
 
 export default function MovieList(props) {
 
-    const arr = props.list.map((single) => 
+    const list_of_movies = props.list.map((single) => 
     <MovieCard
         posterUrl={single.Poster}
         title={single.Title}
@@ -11,6 +11,6 @@ export default function MovieList(props) {
     />
     );
   return (
-    <div id="MovieList">{arr}</div>
+    <div id="MovieList">{list_of_movies}</div>
   )
 }

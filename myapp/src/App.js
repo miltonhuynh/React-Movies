@@ -19,7 +19,8 @@ function App() {
 
         const fetchData = async () => {
             try {
-                const response = await fetch('https://www.omdbapi.com/?apikey=62c9fe58&t=Avengers');
+                const url = `https://www.omdbapi.com/?apikey=62c9fe58&t=${searchTerm}`;
+                const response = await fetch(url);
                 const data = await response.json();
                 setmovieData(data);
                 setisLoading(false);
@@ -35,7 +36,7 @@ function App() {
 
     if(isLoading == true) {
         return (
-            <div>Loading</div>
+            <div id="Loading">Loading</div>
         )
     } else {
         if(error != null) {
