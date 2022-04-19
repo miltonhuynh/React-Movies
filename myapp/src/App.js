@@ -5,6 +5,7 @@ import {useState, useEffect} from 'react';
 import MovieDetails from './components/MovieDetails.js';
 import MovieCard from './components/MovieCard';
 import MovieList from './components/MovieList';
+import Modal from './components/Modal';
 
 function App() {
 
@@ -34,10 +35,6 @@ function App() {
         fetchData();
     }, []);
 
-    const change = () => {
-        document.body.style.backgroundColor = "lightblue"
-    }
-
     if(isLoading == true) {
         return (
             <div id="Loading">Loading</div>
@@ -48,8 +45,10 @@ function App() {
         } else {
             return (
                 <div>
-                    <button onClick={change}></button>
                     <div id="Success">Fetch successful!</div>
+                    <Modal>
+                        <MovieDetails />
+                    </Modal>
                     <MovieDetails 
                         posterUrl={movieData.Poster}
                         title={movieData.Title}
