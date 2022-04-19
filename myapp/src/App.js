@@ -9,7 +9,10 @@ import Modal from './components/Modal';
 
 function App() {
 
-  const [movieData, setmovieData] = useState({});
+  const [movieData1, setmovieData1] = useState({});
+  const [movieData2, setmovieData2] = useState({});
+  const [movieData3, setmovieData3] = useState({});
+  const [movieData4, setmovieData4] = useState({});
   const [searchTerm, setsearchTerm] = useState("batman");
   const [isLoading, setisLoading] = useState(false);
   const [movies, setmovies] = useState([]);
@@ -20,10 +23,14 @@ function App() {
 
         const fetchData = async () => {
             try {
-                const url = `https://www.omdbapi.com/?apikey=62c9fe58&t=${searchTerm}`;
+                const url = `https://www.omdbapi.com/?apikey=62c9fe58&s=${searchTerm}`;
                 const response = await fetch(url);
                 const data = await response.json();
-                setmovieData(data);
+                console.log(data.Search);
+                setmovieData1(data.Search[1]);
+                setmovieData2(data.Search[2]);
+                setmovieData3(data.Search[3]);
+                setmovieData4(data.Search[4]);
                 setisLoading(false);
                 seterror(null);
             } catch (error) {
@@ -46,26 +53,20 @@ function App() {
             return (
                 <div>
                     <div id="Success">Fetch successful!</div>
-                    <Modal>
-                        <MovieDetails />
-                    </Modal>
+                    {/*
                     <MovieDetails 
-                        posterUrl={movieData.Poster}
-                        title={movieData.Title}
-                        rated={movieData.Rated}
-                        runtime={movieData.Runtime}
-                        genre={movieData.Genre}
-                        plot={movieData.Plot}
-                        actors={movieData.Actors}
-                        rating={movieData.imdbRating}
+                        posterUrl={movieData1.Poster}
+                        title={movieData1.Title}
+                        rated={movieData1.Rated}
+                        runtime={movieData1.Runtime}
+                        genre={movieData1.Genre}
+                        plot={movieData1.Plot}
+                        actors={movieData1.Actors}
+                        rating={movieData1.imdbRating}
                     />
-                    <MovieCard
-                        posterUrl={movieData.Poster}
-                        title={movieData.Title}
-                        type={movieData.Type}
-                    />
+                    */}
                     <MovieList
-                        list={[movieData,movieData,movieData,movieData]}
+                        list={[movieData1,movieData2,movieData3,movieData4]}
                     />
                 </div>
             )

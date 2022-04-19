@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
+import MovieDetails from './MovieDetails';
 
 export default function MovieCard(props) {
 
@@ -7,7 +8,9 @@ export default function MovieCard(props) {
   const [error, seterror] = useState(null);
 
   const clicked = () => {
-    document.body.style.backgroundColor = "red";
+    return (
+      console.log('clicked')
+    )
   }
 
   return (
