@@ -17,13 +17,14 @@ function App() {
   const [isLoading, setisLoading] = useState(false);
   const [movies, setmovies] = useState([]);
   const [error, seterror] = useState(null);
+  const [MovieSearch, setMovieSearch] = useState("spider-man");
 
     useEffect(() => {
         setisLoading(true);
 
         const fetchData = async () => {
             try {
-                const url = `https://www.omdbapi.com/?apikey=62c9fe58&s=${searchTerm}`;
+                const url = `https://www.omdbapi.com/?apikey=62c9fe58&s=${MovieSearch}`;
                 const response = await fetch(url);
                 const data = await response.json();
                 console.log(data.Search);
@@ -42,6 +43,14 @@ function App() {
         fetchData();
     }, []);
 
+    function handleSubmit(event) {
+        event.preventDefault();
+        const payload = {
+            MovieSearch
+        };
+    }
+ 
+
     if(isLoading == true) {
         return (
             <div id="Loading">Loading</div>
@@ -52,6 +61,16 @@ function App() {
         } else {
             return (
                 <div>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            value = {MovieSearch}
+                            onChange = {(event) => setMovieSearch(event.target.value)}
+                        />
+                        <button type="submit">Submit</button>
+                    </form>
+
+
                     <div id="Success">Fetch successful!</div>
                     {/*
                     <MovieDetails 
