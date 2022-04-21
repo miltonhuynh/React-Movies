@@ -9,6 +9,7 @@ import Modal from './components/Modal';
 
 function App() {
 
+
   const [movieData1, setmovieData1] = useState({});
   const [movieData2, setmovieData2] = useState({});
   const [movieData3, setmovieData3] = useState({});
@@ -18,6 +19,9 @@ function App() {
   const [movies, setmovies] = useState([]);
   const [error, seterror] = useState(null);
   const [MovieSearch, setMovieSearch] = useState("spider-man");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+ 
 
     useEffect(() => {
         setisLoading(true);
@@ -27,12 +31,13 @@ function App() {
                 const url = `https://www.omdbapi.com/?apikey=62c9fe58&s=${MovieSearch}`;
                 const response = await fetch(url);
                 const data = await response.json();
-                console.log(data.Search);
+
                 setmovieData1(data.Search[1]);
                 setmovieData2(data.Search[2]);
                 setmovieData3(data.Search[3]);
                 setmovieData4(data.Search[4]);
-                setisLoading(false);
+
+                setisLoading(false);  
                 seterror(null);
             } catch (error) {
                 seterror(error);
@@ -45,9 +50,6 @@ function App() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        const payload = {
-            MovieSearch
-        };
     }
  
 
@@ -64,7 +66,6 @@ function App() {
                     <form onSubmit={handleSubmit}>
                         <input
                             type="text"
-                            value = {MovieSearch}
                             onChange = {(event) => setMovieSearch(event.target.value)}
                         />
                         <button type="submit">Submit</button>
@@ -86,6 +87,12 @@ function App() {
                     */}
                     <MovieList
                         list={[movieData1,movieData2,movieData3,movieData4]}
+                        isModalOpen={isModalOpen}
+                        setIsModalOpen={setIsModalOpen}
+                    />
+                    <Modal
+                        isModalOpen={isModalOpen}
+                        setIsModalOpen={setIsModalOpen}
                     />
                 </div>
             )

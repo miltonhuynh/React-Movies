@@ -1,10 +1,23 @@
-import React from 'react'
-import MovieDetails from './MovieDetails'
+import { useEffect } from "react";
+import ReactModal from "react-modal";
 
-export default function Modal(props) {
+
+export default function Modal({ isModalOpen, setIsModalOpen }) {
+  useEffect(() => {
+    ReactModal.setAppElement("body");
+  }, []);
+
   return (
-    <div>
-      <MovieDetails/>
-    </div>
-  )
+    <ReactModal isOpen={isModalOpen}>
+      <div className="Modal-TitleBar">
+        <div className="Modal-Title">Movie Details!</div>
+        <div
+          className="Modal-CloseButtonWrapper"
+          onClick={() => setIsModalOpen(false)}
+        >
+          X
+        </div>
+      </div>
+    </ReactModal>
+  );
 }

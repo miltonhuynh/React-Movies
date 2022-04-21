@@ -1,9 +1,9 @@
 import React from 'react'
 import MovieCard from './MovieCard';
 
-export default function MovieList(props) {
+export default function MovieList({list}) {
 
-    const list_of_movies = props.list.map((single) => 
+    const list_of_movies = list.map((single) => 
     <MovieCard
         posterUrl={single.Poster}
         title={single.Title}
