@@ -2,21 +2,17 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import Modal from './Modal';
 
-export default function MovieCard(props) {
-
-  const [movieData, setmovieData] = useState({});
-  const [error, seterror] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(true);
+export default function MovieCard({posterUrl, title, setIsModalOpen}) {
 
   const clicked = () => {
-    props.setIsModalOpen(true);
+    setIsModalOpen(true);
   }
 
   return (
     <>
       <div id="CardContainer">
-          <img id="CardImage" src={props.posterUrl} onClick={clicked}></img>
-          <div id="CardTitle">{props.title}</div>
+          <img id="CardImage" src={posterUrl} onClick={clicked}></img>
+          <div id="CardTitle">{title}</div>
           <div id="MovieTag">Movie</div>
       </div>
 </>

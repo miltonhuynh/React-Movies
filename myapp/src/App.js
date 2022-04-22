@@ -2,14 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {useState, useEffect} from 'react';
-import MovieDetails from './components/MovieDetails.js';
 import MovieCard from './components/MovieCard';
 import MovieList from './components/MovieList';
 import Modal from './components/Modal';
 
 function App() {
-
-
   const [movieData1, setmovieData1] = useState({});
   const [movieData2, setmovieData2] = useState({});
   const [movieData3, setmovieData3] = useState({});
@@ -74,19 +71,10 @@ function App() {
 
                     <div id="Success">Fetch successful!</div>
                     {/*
-                    <MovieDetails 
-                        posterUrl={movieData1.Poster}
-                        title={movieData1.Title}
-                        rated={movieData1.Rated}
-                        runtime={movieData1.Runtime}
-                        genre={movieData1.Genre}
-                        plot={movieData1.Plot}
-                        actors={movieData1.Actors}
-                        rating={movieData1.imdbRating}
-                    />
                     */}
                     <MovieList
                         list={[movieData1,movieData2,movieData3,movieData4]}
+                        title={movieData1.title}
                         isModalOpen={isModalOpen}
                         setIsModalOpen={setIsModalOpen}
                     />

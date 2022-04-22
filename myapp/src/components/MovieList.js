@@ -1,15 +1,15 @@
 import React from 'react'
 import MovieCard from './MovieCard';
 
-export default function MovieList(props) {
+export default function MovieList({list, isModalOpen, setIsModalOpen}) {
 
-    const list_of_movies = props.list.map((single) => 
+    const list_of_movies = list.map((single) => 
     <MovieCard
         posterUrl={single.Poster}
         title={single.Title}
         type={single.Type}
-        isModalOpen={props.isModalOpen}
-        setIsModalOpen={props.setIsModalOpen}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
     />
     );
   return (
