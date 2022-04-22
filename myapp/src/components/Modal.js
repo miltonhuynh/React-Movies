@@ -1,30 +1,41 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ReactModal from "react-modal";
 
 
-export default function Modal({isModalOpen, setIsModalOpen,posterUrl, title, rating, rated, runtime, genre, plot, actors}) {
+export default function Modal({isModalOpen, setIsModalOpen,posterUrl, title}) {
+
+  const [movieDetails, setmovieDetails] = useState();
   useEffect(() => {
     ReactModal.setAppElement("body");
+
+    const fetchData = async () => {
+      const url = `https://www.omdbapi.com/?apikey=62c9fe58&t=${title}`;
+      const response = await fetch(url);
+      const data = await response.json();
+      setmovieDetails(data);
+    };
+    fetchData(); 
   }, []);
 
+  console.log(movieDetails);
+ 
   return (
     <ReactModal isOpen={isModalOpen}>
       <div className="Modal-TitleBar">
-        <div className="Modal-Title">Movie Details!</div>
         <div id="container">
             <div className="image">
                 <img src={posterUrl}></img>
             </div>
             <div id="MovieInfo">
-                <div id="MovieTitle">{title}</div>
-                <div id="imdb">IMDb score: {rating}</div>
+                <div id="MovieTitle">Title: {null}</div>
+                <div id="imdb">IMDb score: {null}</div>
                 <div id="Buttons">
-                    <div className="GrayBg">{rated}</div>
-                    <div className="GrayBg">{runtime}</div>
-                    <div className="GrayBg">{genre}</div>
+                    <div className="GrayBg">{null}</div>
+                    <div className="GrayBg">{null}</div>
+                    <div className="GrayBg">{null}</div>
                 </div>
-                <div><b>Plot</b><br/>{plot}</div>
-                <div><b>Actors: </b><br/>{actors}</div>
+                <div><b>Plot</b><br/>{null}</div>
+                <div><b>Actors: </b><br/>{null}</div>
             </div>
         </div>
         <div
