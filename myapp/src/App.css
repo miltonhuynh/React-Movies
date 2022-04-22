@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 #container {
   display: flex;
   margin: 5rem;
@@ -20,6 +24,7 @@
 #MovieTitle {
   font-size: 40px;
   text-align: center;
+  color: white;
 }
 
 .GrayBg {
@@ -43,7 +48,7 @@
 #CardContainer {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 3px solid white;
   width: 12rem;
   margin: 5rem;
   align-items: center;
@@ -55,6 +60,7 @@
 
 #CardTitle {
   font-size: 1.5rem;
+  color: white;
 }
 
 #MovieTag {
