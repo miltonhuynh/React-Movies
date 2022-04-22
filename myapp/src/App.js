@@ -74,7 +74,6 @@ function App() {
                     */}
                     <MovieList
                         list={[movieData1,movieData2,movieData3,movieData4]}
-                        title={movieData1.title}
                         isModalOpen={isModalOpen}
                         setIsModalOpen={setIsModalOpen}
                     />

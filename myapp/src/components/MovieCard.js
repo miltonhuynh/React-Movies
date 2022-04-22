@@ -15,6 +15,8 @@ export default function MovieCard({posterUrl, title, setIsModalOpen}) {
           <div id="CardTitle">{title}</div>
           <div id="MovieTag">Movie</div>
       </div>
-</>
+      {/*Send title data to Modal to fetch movie details*/}
+      <Modal title={title}/>
+  </>
   )
 }
