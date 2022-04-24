@@ -11,9 +11,7 @@ function App() {
   const [movieData2, setmovieData2] = useState({});
   const [movieData3, setmovieData3] = useState({});
   const [movieData4, setmovieData4] = useState({});
-  const [searchTerm, setsearchTerm] = useState("batman");
   const [isLoading, setisLoading] = useState(false);
-  const [movies, setmovies] = useState([]);
   const [error, seterror] = useState(null);
   const [MovieSearch, setMovieSearch] = useState("spider-man");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,7 +36,6 @@ function App() {
                 seterror(null);
             } catch (error) {
                 seterror(error);
-                movies([]);
                 setisLoading(false);
             }
         };
