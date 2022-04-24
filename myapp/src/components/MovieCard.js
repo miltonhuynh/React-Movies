@@ -17,8 +17,6 @@ export default function MovieCard({posterUrl, title, setIsModalOpen}) {
       setmovieDetails(data);
     };
     fetchData(); 
-    console.log(movieDetails);
-    <Modal title={2}/>
   }
 
   return (
