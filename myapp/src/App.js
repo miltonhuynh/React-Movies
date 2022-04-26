@@ -3,9 +3,6 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import MovieList from './components/MovieList';
 import Modal from './components/Modal';
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function App() {
   const [movieData1, setmovieData1] = useState({});
@@ -63,7 +60,7 @@ function App() {
                             type="text"
                             onChange = {(event) => setMovieSearch(event.target.value)}
                         />
-                        <Button variant="primary" type="submit">Submit</Button>
+                        <button type="submit">Submit</button>
                     </form>
 
 
