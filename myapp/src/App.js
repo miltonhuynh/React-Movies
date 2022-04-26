@@ -39,10 +39,30 @@ function App() {
             }
         };
         fetchData();
-    }, [MovieSearch]);
+    }, []);
 
     function handleSubmit(event) {
         event.preventDefault();
+        const fetchData = async () => {
+            try {
+                const url = `https://www.omdbapi.com/?apikey=62c9fe58&s=${MovieSearch}`;
+                const response = await fetch(url);
+                const data = await response.json();
+                console.log(data);
+
+                setmovieData1(data.Search[1]);
+                setmovieData2(data.Search[2]);
+                setmovieData3(data.Search[3]);
+                setmovieData4(data.Search[4]);
+
+                setisLoading(false);  
+                seterror(null);
+            } catch (error) {
+                seterror(error);
+                setisLoading(false);
+            }
+        };
+        fetchData();
     }
 
     if(isLoading === true) {
@@ -62,7 +82,6 @@ function App() {
                         />
                         <button type="submit">Submit</button>
                     </form>
-
 
                     <div id="Success">Fetch successful!</div>
                     {/*
