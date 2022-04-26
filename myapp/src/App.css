@@ -47,7 +47,7 @@ body {
 #CardContainer {
   display: flex;
   flex-direction: column;
-  border: 3px solid white;
+  border: 3px solid red;
   width: 12rem;
   margin: 5rem;
   align-items: center;
@@ -84,3 +84,16 @@ body {
   display: flex;
 }
 
+#form {
+  position: relative;
+  left: 30rem;
+  width: 20em;
+  padding: 2rem;
+  border: 2px solid white;
+}
+
+#input {
+  width: 100%;
+  height: 2rem;
+  font-size: 1rem;
+}

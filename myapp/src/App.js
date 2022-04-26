@@ -11,7 +11,7 @@ function App() {
   const [movieData4, setmovieData4] = useState({});
   const [isLoading, setisLoading] = useState(false);
   const [error, seterror] = useState(null);
-  const [MovieSearch, setMovieSearch] = useState("batman");
+  const [MovieSearch, setMovieSearch] = useState('batman');
   const [isModalOpen, setIsModalOpen] = useState(false); 
 
   const [movieID, setmovieID] = useState();
@@ -75,15 +75,17 @@ function App() {
         } else {
             return (
                 <div>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} id="form">
                         <input
+                            id="input"
                             type="text"
+                            placeholder="Type in a name of a movie"
                             onChange = {(event) => setMovieSearch(event.target.value)}
                         />
-                        <button type="submit">Submit</button>
+                        <button type="submit">SEARCH</button>
                     </form>
 
-                    <div id="Success">Fetch successful!</div>
+                    <div id="Success">Fetch successful! Type in another movie!</div>
                     {/*
                     */}
                     <MovieList

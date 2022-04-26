@@ -32,7 +32,6 @@
     "jest": "^27.4.3",
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
-    "homepage": "https://miltonhuynh.github.io/React-Movies/",
     "mini-css-extract-plugin": "^2.4.5",
     "postcss": "^8.4.4",
     "postcss-flexbugs-fixes": "^5.0.2",
@@ -62,11 +61,9 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "node scripts/test.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js"
   },
   "eslintConfig": {
     "extends": [
@@ -140,5 +137,4 @@
       "react-app"
     ]
   }
-  
 }
