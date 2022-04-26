@@ -7,6 +7,7 @@ export default function Modal({isModalOpen, setIsModalOpen, title, movieID, setm
 
   const [movieDetails, setmovieDetails] = useState();
   const [Title, setTitle] = useState();
+  const [IMDb, setIMDb] = useState();
 
   useEffect(() => {
     ReactModal.setAppElement("body");
@@ -20,6 +21,7 @@ export default function Modal({isModalOpen, setIsModalOpen, title, movieID, setm
       const response = await fetch(url);
       const data = await response.json();
       setTitle(data.Title);
+      setIMDb(data.IMDb);
     };
     fetchData();
 }, [movieID]);
@@ -27,7 +29,10 @@ export default function Modal({isModalOpen, setIsModalOpen, title, movieID, setm
   
   return (
     <ReactModal isOpen={isModalOpen}>
-      <MovieDetails title={Title}/>
+      <MovieDetails 
+        title={Title}
+        imdb={IMDb}
+      />
         <div
             className="Modal-CloseButtonWrapper"
             onClick={() => setIsModalOpen(false)}

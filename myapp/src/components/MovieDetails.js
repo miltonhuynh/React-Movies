@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function MovieDetails({title}) {
+export default function MovieDetails({title,imdb}) {
     
   return (
     <div className="Modal-TitleBar">
@@ -10,7 +10,7 @@ export default function MovieDetails({title}) {
             </div>
             <div id="MovieInfo">
                 <div id="MovieTitle">Title: {title}</div>
-                <div id="imdb">IMDb score: {null}</div>
+                <div id="imdb">IMDb score: {imdb}</div>
                 <div id="Buttons">
                     <div className="GrayBg">{null}</div>
                     <div className="GrayBg">{null}</div>

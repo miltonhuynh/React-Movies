@@ -3,6 +3,9 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import MovieList from './components/MovieList';
 import Modal from './components/Modal';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [movieData1, setmovieData1] = useState({});
@@ -44,7 +47,6 @@ function App() {
     function handleSubmit(event) {
         event.preventDefault();
     }
- 
 
     if(isLoading === true) {
         return (
@@ -61,7 +63,7 @@ function App() {
                             type="text"
                             onChange = {(event) => setMovieSearch(event.target.value)}
                         />
-                        <button type="submit">Submit</button>
+                        <Button variant="primary" type="submit">Submit</Button>
                     </form>
 
 
@@ -88,3 +90,4 @@ function App() {
 }
 
 export default App;
+
