@@ -1,8 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {useState, useEffect} from 'react';
-import MovieCard from './components/MovieCard';
 import MovieList from './components/MovieList';
 import Modal from './components/Modal';
 
@@ -13,10 +11,10 @@ function App() {
   const [movieData4, setmovieData4] = useState({});
   const [isLoading, setisLoading] = useState(false);
   const [error, seterror] = useState(null);
-  const [MovieSearch, setMovieSearch] = useState("spider-man");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [MovieSearch, setMovieSearch] = useState("batman");
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
- 
+  const [movieID, setmovieID] = useState();
 
     useEffect(() => {
         setisLoading(true);
@@ -26,6 +24,7 @@ function App() {
                 const url = `https://www.omdbapi.com/?apikey=62c9fe58&s=${MovieSearch}`;
                 const response = await fetch(url);
                 const data = await response.json();
+                console.log(data);
 
                 setmovieData1(data.Search[1]);
                 setmovieData2(data.Search[2]);
@@ -40,14 +39,14 @@ function App() {
             }
         };
         fetchData();
-    }, []);
+    }, [MovieSearch]);
 
     function handleSubmit(event) {
         event.preventDefault();
     }
  
 
-    if(isLoading == true) {
+    if(isLoading === true) {
         return (
             <div id="Loading">Loading</div>
         )
@@ -73,10 +72,14 @@ function App() {
                         list={[movieData1,movieData2,movieData3,movieData4]}
                         isModalOpen={isModalOpen}
                         setIsModalOpen={setIsModalOpen}
+                        movieID={movieID}
+                        setmovieID={setmovieID}
                     />
                     <Modal
                         isModalOpen={isModalOpen}
                         setIsModalOpen={setIsModalOpen}
+                        movieID={movieID}
+                        setmovieID={setmovieID}
                     />
                 </div>
             )
