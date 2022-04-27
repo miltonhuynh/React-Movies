@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: black !important;
 }
 
 #container {
@@ -47,9 +47,9 @@ body {
 #CardContainer {
   display: flex;
   flex-direction: column;
-  border: 3px solid red;
-  width: 12rem;
-  margin: 5rem;
+  border: 2px solid white;
+  width: 14rem;
+  margin: 1rem;
   align-items: center;
 }
 

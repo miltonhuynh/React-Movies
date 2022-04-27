@@ -3,12 +3,16 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import MovieList from './components/MovieList';
 import Modal from './components/Modal';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [movieData1, setmovieData1] = useState({});
   const [movieData2, setmovieData2] = useState({});
   const [movieData3, setmovieData3] = useState({});
   const [movieData4, setmovieData4] = useState({});
+  const [movieData5, setmovieData5] = useState({});
+  const [movieData6, setmovieData6] = useState({});
   const [isLoading, setisLoading] = useState(false);
   const [error, seterror] = useState(null);
   const [MovieSearch, setMovieSearch] = useState('batman');
@@ -30,6 +34,8 @@ function App() {
                 setmovieData2(data.Search[2]);
                 setmovieData3(data.Search[3]);
                 setmovieData4(data.Search[4]);
+                setmovieData5(data.Search[5]);
+                setmovieData6(data.Search[6]);
 
                 setisLoading(false);  
                 seterror(null);
@@ -54,6 +60,8 @@ function App() {
                 setmovieData2(data.Search[2]);
                 setmovieData3(data.Search[3]);
                 setmovieData4(data.Search[4]);
+                setmovieData5(data.Search[5]);
+                setmovieData6(data.Search[6]);
 
                 setisLoading(false);  
                 seterror(null);
@@ -82,14 +90,14 @@ function App() {
                             placeholder="Type in a name of a movie"
                             onChange = {(event) => setMovieSearch(event.target.value)}
                         />
-                        <button type="submit">SEARCH</button>
+                        <Button variant="primary" type="submit">SEARCH</Button>
                     </form>
 
                     <div id="Success">Fetch successful! Type in another movie!</div>
                     {/*
                     */}
                     <MovieList
-                        list={[movieData1,movieData2,movieData3,movieData4]}
+                        list={[movieData1,movieData2,movieData3,movieData4,movieData5,movieData6]}
                         isModalOpen={isModalOpen}
                         setIsModalOpen={setIsModalOpen}
                         movieID={movieID}
