@@ -1,7 +1,7 @@
 import React from 'react'
 import MovieCard from './MovieCard';
 
-export default function MovieList({Title, list, isModalOpen, setIsModalOpen, movieID, setmovieID}) {
+export default function MovieList({Title, list, isModalOpen, setIsModalOpen, setmovieID}) {
     const list_of_movies = list.map((single) => 
       <MovieCard
           posterUrl={single.Poster}
