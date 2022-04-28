@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import MovieList from './components/MovieList';
 import Modal from './components/Modal';
 import Button from 'react-bootstrap/Button';
+import {StyledButton} from './StyledComponents.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -91,6 +92,7 @@ function App() {
                             onChange = {(event) => setMovieSearch(event.target.value)}
                         />
                         <Button variant="primary" type="submit">SEARCH</Button>
+                        <StyledButton type="submit">SEARCH</StyledButton>
                     </form>
 
                     <div id="Success">Fetch successful! Type in another movie!</div>
