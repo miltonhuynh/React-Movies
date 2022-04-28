@@ -30,12 +30,12 @@ function App() {
                 const data = await response.json();
                 console.log(data);
 
-                setmovieData1(data.Search[1]);
-                setmovieData2(data.Search[2]);
-                setmovieData3(data.Search[3]);
-                setmovieData4(data.Search[4]);
-                setmovieData5(data.Search[5]);
-                setmovieData6(data.Search[6]);
+                setmovieData1(data.Search[0]);
+                setmovieData2(data.Search[1]);
+                setmovieData3(data.Search[2]);
+                setmovieData4(data.Search[3]);
+                setmovieData5(data.Search[4]);
+                setmovieData6(data.Search[5]);
 
                 setisLoading(false);  
                 seterror(null);
