@@ -41,6 +41,12 @@ export default function Modal({isModalOpen, setIsModalOpen, title, movieID, setm
   
   return (
     <ReactModal isOpen={isModalOpen}>
+      <div
+        className="Modal-CloseButtonWrapper"
+        onClick={() => setIsModalOpen(false)}
+      >
+        X
+      </div>
       <MovieDetails 
         title={Title}
         imdb={IMDb}
@@ -51,12 +57,6 @@ export default function Modal({isModalOpen, setIsModalOpen, title, movieID, setm
         genre={Genre}
         image={Image}
       />
-        <div
-            className="Modal-CloseButtonWrapper"
-            onClick={() => setIsModalOpen(false)}
-          >
-            X
-        </div>
     </ReactModal>
   );
 }
