@@ -1,18 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { render } from "react-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 import './index.css';
 import App from './App';
-import routertest from "./routertest.js"
+import Routertest from "./routes/Routertest"
 
-ReactDOM.render(
-  <React.StrictMode>
+render(
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="routertest" element={<routertest />} />
-    </Routes>
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+      <Routes>
+        <Route path="/React-Movies" element={<App />}>
+          <Route path="Routertest" element={<Routertest />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>,
+  document.getElementById("root")
 );
