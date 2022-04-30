@@ -5,6 +5,7 @@ import MovieList from './components/MovieList';
 import Modal from './components/Modal';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from "react-router-dom"
 
 function App() {
   const [movieData1, setmovieData1] = useState({});
@@ -92,7 +93,7 @@ function App() {
                         />
                         <Button variant="primary" type="submit">SEARCH</Button>
                     </form>
-
+                    <Link to="/routertest">Router test</Link>
                     <div id="Success">Fetch successful! Type in another movie!</div>
                     {/*
                     */}
