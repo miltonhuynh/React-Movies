@@ -5,7 +5,7 @@ import MovieList from './components/MovieList';
 import Modal from './components/Modal';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Outlet,Link} from "react-router-dom"
+import {Outlet,Link} from "react-router-dom";
 
 function App() {
   const [movieData1, setmovieData1] = useState({});
@@ -55,8 +55,6 @@ function App() {
                 const url = `https://www.omdbapi.com/?apikey=62c9fe58&s=${MovieSearch}`;
                 const response = await fetch(url);
                 const data = await response.json();
-                console.log(data);
-
                 setmovieData1(data.Search[1]);
                 setmovieData2(data.Search[2]);
                 setmovieData3(data.Search[3]);
@@ -74,6 +72,8 @@ function App() {
         fetchData();
     }
 
+    console.log(movieData6);
+
     if(isLoading === true) {
         return (
             <div id="Loading">Loading</div>
@@ -84,6 +84,7 @@ function App() {
         } else {
             return (
                 <div>
+                    <Outlet />
                     <form onSubmit={handleSubmit} id="form">
                         <input
                             id="input"
@@ -110,7 +111,6 @@ function App() {
                         movieID={movieID}
                         setmovieID={setmovieID}
                     />
-                    <Outlet />
                 </div>
             )
         }
